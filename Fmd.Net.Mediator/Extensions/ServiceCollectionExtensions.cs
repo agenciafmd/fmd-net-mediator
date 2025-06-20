@@ -17,6 +17,21 @@ public static class ServiceCollectionExtensions
 
         return services;
     }
+    
+    public static IServiceCollection AddMediator(this IServiceCollection services, 
+        Action<MediatorAssemblyRegistrar> configure)
+    {
+        var registrar = new MediatorAssemblyRegistrar();
+        configure(registrar);
+        var assemblies = registrar.Assemblies.ToArray();
+
+        services.AddSingleton<IMediator, Implementation.Mediator>();
+
+        RegisterHandlers(services, assemblies, typeof(INotificationHandler<>));
+        RegisterHandlers(services, assemblies, typeof(IRequestHandler<,>));
+
+        return services;
+    }
 
     private static Assembly[] ResolveAssemblies(object[] args)
     {
