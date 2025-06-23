@@ -84,12 +84,21 @@ services.AddTransient<IRequestHandler<CriarClienteCommand, string>, CriarCliente
 services.AddTransient<INotificationHandler<ClienteCriadoEvent>, EnviarEmailBemVindoHandler>();
 ```
 
-Ou usar a varredura completa dos assemblies desejados da aplicação
+Ou usar a varredura completa dos assemblies desejados da aplicação assim:
 
 ```csharp
 services.AddMediator(Assembly.Load("Demo.Application"), Assembly.Load("Demo.Domain"));
 ```
 
+Ou via Actions
+
+```csharp
+services.AddMediator(m =>
+{
+    m.AddAssembly("Demo.Application");
+    m.AddAssembly("Demo.Domain");
+});
+```
 ---
 
 #### 4️⃣ Execução ⚙️
