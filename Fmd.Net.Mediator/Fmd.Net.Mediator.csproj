@@ -5,12 +5,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageIcon>logo-fmd.jpg</PackageIcon>
+        <PackageIcon>logo.jpg</PackageIcon>
         <PackageId>Fmd.Net.Mediator</PackageId>
         <Title>Fmd.Net.Mediator</Title>
         <Authors>Vinicius Fumagalli</Authors>
         <Company>FMD</Company>
-        <Version>1.0.3</Version>
+        <Version>1.0.4</Version>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,7 +18,7 @@
     </ItemGroup>
     
     <ItemGroup>
-        <None Include="..\..\fmd-net-mediator\assets\logo-fmd.jpg">
+        <None Include="..\..\fmd-net-mediator\assets\logo.jpg">
             <Pack>True</Pack>
             <PackagePath></PackagePath>
         </None>
